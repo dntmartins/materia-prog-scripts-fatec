@@ -44,9 +44,9 @@ function ManadaVirgula() {
         var animaisText = "";
         for (var i = 0; i < this.animais.length; i++) {
             if (i + 1 == this.animais.length) {
-                animaisText += this.animais[i];
+                animaisText += this.animais[i].fazerBarulho();
             } else {
-                animaisText += this.animais[i] + ", ";
+                animaisText += this.animais[i].fazerBarulho() + ", ";
             }
         }
         console.log(animaisText);
@@ -58,9 +58,9 @@ function ManadaSustenido() {
         var animaisText = "";
         for (var i = 0; i < this.animais.length; i++) {
             if (i + 1 == this.animais.length) {
-                animaisText += this.animais[i];
+                animaisText += this.animais[i].fazerBarulho();
             } else {
-                animaisText += this.animais[i] + "# ";
+                animaisText += this.animais[i].fazerBarulho() + "# ";
             }
         }
         console.log(animaisText);
@@ -74,16 +74,16 @@ ManadaSustenido.prototype = new Manada();
 
 var animal = new Animal();
 var cao = new Cao("Sanção");
-var gato = new Gato("Garfield")
+var gato = new Gato("Garfield");
 console.log(animal.fazerBarulho());
 console.log(cao.fazerBarulho());
 console.log(gato.fazerBarulho());
 
 var manadaVirgula = new ManadaVirgula();
-manadaVirgula.addAnimal(cao.nome); //Adicionando nome apenas, mas poderia ser o objeto
-manadaVirgula.addAnimal(gato.nome); //Adicionando nome apenas, mas poderia ser o objeto
-manadaVirgula.imprimeAnimais()
+manadaVirgula.addAnimal(cao); //Adicionando nome apenas, mas poderia ser o objeto
+manadaVirgula.addAnimal(gato); //Adicionando nome apenas, mas poderia ser o objeto
+manadaVirgula.imprimeAnimais();
 var manadaSustenido = new ManadaSustenido();
-manadaSustenido.addAnimal(cao.nome);
-manadaSustenido.addAnimal(gato.nome);
-manadaSustenido.imprimeAnimais()
+manadaSustenido.addAnimal(cao);
+manadaSustenido.addAnimal(gato);
+manadaSustenido.imprimeAnimais();
