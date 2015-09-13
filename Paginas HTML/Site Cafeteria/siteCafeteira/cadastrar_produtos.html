@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Site Cafeteira</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
+<link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="js/cadastrar_produto_script.js"></script>
+</head>
+<body>
+	<header>
+		<img id="banner" src="img/banner_cafe.png">
+		<div class="page-header">
+			<h1 id="titulo">
+				Seu café, <small>em qualquer lugar!</small>
+			</h1>
+		</div>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<img id="beans" src="img/beans.png">
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Principal <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">Nossa História</a></li>
+						<li class="active"><a href="cadastrar_produtos.html">Nossos
+								produtos</a></li>
+						<li><a href="#">Contato</a></li>
+						<li><a href="#">Trabalhe Conosco</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false">Localização<span
+								class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Action</a></li>
+								<li><a href="#">Another action</a></li>
+								<li><a href="#">Something else here</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Separated link</a></li>
+								<li class="divider"></li>
+								<li><a href="#">One more separated link</a></li>
+							</ul></li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" id="form-main-search" class="form-control"
+								placeholder="Pesquise no site...">
+						</div>
+						<button type="submit" class="btn btn-default">Enviar</button>
+					</form>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</header>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Cadastrar Produto</h2>
+					<button id="mostrar-form-botao" class="btn btn-success">Adicionar produto</button>
+						<br>
+						<br>
+					<div id="form-div" class="well">
+						<h3 class="text-center">Novo Produto</h3>
+						<form id="form-categoria" action="#" method="post" role="form">
+							<input type="hidden" value="057cfacb9d350ad5c951d9c56f90b9a8"
+								name="_csrf_code">
+							<div id="form-group-nome" class="form-group">
+								<label for="input-nome" class="control-label">Nome </label> <input
+									id="input-nome" type="text" class="form-control" name="nome"
+									value=""> <span id="span-help-nome" class="help-block"></span>
+							</div>
+							<div id="form-group-tipo" class="form-group">
+								<label for="input-tipo" class="control-label">Tipo </label> <input
+									id="input-tipo" type="text" class="form-control" name="tipo"
+									value=""> <span id="span-help-tipo" class="help-block"></span>
+							</div>
+							<div id="form-group-preco" class="form-group">
+								<label for="input-preco" class="control-label">Preco </label> <input
+									id="input-preco" type="text" class="form-control" name="preco"
+									value=""> <span id="span-help-preco" class="help-block"></span>
+							</div>
+							<button type="submit" class="btn btn-success">Criar</button>
+							<button type="reset" class="btn btn-warning">Limpar</button>
+						</form>
+					</div>
+					
+					<hr>
+					<h2>Lista de Categorias</h2>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Data de criação</th>
+								<th>Nome</th>
+								<th>Tipo</th>
+								<th>Preco</th>
+							</tr>
+						</thead>
+						<tbody id="tabela-categoria">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<ul class="pagination">
+		    <li>
+		      <a href="#" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    <li><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">4</a></li>
+		    <li><a href="#">5</a></li>
+		    <li>
+		      <a href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</div>
+	</section>
+	<footer>
+		‎
+		<div id="copyR">© Copyright 2013 | Todos os direitos reservados</div>
+	</footer>
+</body>
+</html>
